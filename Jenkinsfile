@@ -32,7 +32,10 @@ pipeline {
                 branch 'development'
             }
             steps {
-/                #...
+                sh '''
+                     echo "develop"
+                     ls -lah
+                 '''
             }
         }
         stage('Deploy for production') {
@@ -40,7 +43,10 @@ pipeline {
                 branch 'production'
             }
             steps {
- /               #...
+                sh '''
+                     echo "deploy"
+                     ls -lah
+                 '''
             }
         }
          }
