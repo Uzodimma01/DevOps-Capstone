@@ -32,7 +32,7 @@ pipeline {
                 branch 'development'
             }
             steps {
-                #...
+/                #...
             }
         }
         stage('Deploy for production') {
@@ -40,7 +40,7 @@ pipeline {
                 branch 'production'
             }
             steps {
-                #...
+ /               #...
             }
         }
          }
