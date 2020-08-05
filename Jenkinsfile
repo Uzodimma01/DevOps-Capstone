@@ -25,8 +25,24 @@ pipeline {
                   withAWS(region:'us-east-2',credentials:'aws-static') {
                   sh 'echo "Uploading content with AWS creds"'
                       s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file:'index.html', bucket:'static-jenkins-pipeline')
-                  }
               }
+         }
+         stage('Deliver for development') {
+            when {
+                branch 'development'
+            }
+            steps {
+                #...
+            }
+        }
+        stage('Deploy for production') {
+            when {
+                branch 'production'
+            }
+            steps {
+                #...
+            }
+        }
          }
      }
 }
